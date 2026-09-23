@@ -1,0 +1,17 @@
+// prisma/schema.prisma
+// Aprende más sobre el schema de Prisma: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Enano {
+  id     Int    @id @default(autoincrement())
+  nombre String
+  edad   Int?
+}
